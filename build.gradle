@@ -31,7 +31,7 @@ dependencies {
     testRuntimeOnly "org.junit.vintage:junit-vintage-engine:$JUNIT5_VERSION"
 
     jmh 'org.openjdk.jmh:jmh-core:1.29'
-    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.29'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.30'
 }
 
 
