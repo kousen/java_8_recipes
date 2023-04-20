@@ -14,11 +14,11 @@ public class CreatingStreams {
         System.out.println(names);
 
         String[] munsters = {"Herman", "Lily", "Eddie", "Marilyn", "Grandpa"};
-        names = String.join(",", munsters);
+        names = String.join(";", munsters);
         System.out.println(names);
 
         List<BigDecimal> nums = Stream.iterate(BigDecimal.ONE, n -> n.add(BigDecimal.ONE))
-                .limit(10)
+                .limit(100)
                 .collect(Collectors.toList());
         System.out.println(nums);
 
