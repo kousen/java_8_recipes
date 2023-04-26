@@ -1,7 +1,7 @@
 [versions]
 assertj = "3.24.2"
 jmh = "1.36"
-junit = "5.9.2"
+junit = "5.9.3"
 mockito = "5.2.0"
 
 [libraries]
