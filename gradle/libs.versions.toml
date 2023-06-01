@@ -1,7 +1,7 @@
 [versions]
 assertj = "3.24.2"
 jmh = "1.36"
-junit = "5.9.2"
+junit = "5.10.0-M1"
 mockito = "5.2.0"
 
 [libraries]
@@ -11,7 +11,7 @@ jmh-core = { module = "org.openjdk.jmh:jmh-core", version.ref = "jmh" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito" }
-mockito-junit = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+mockito-junit = "org.mockito:mockito-junit-jupiter:5.3.1"
 
 [bundles]
 jmh = [
@@ -28,6 +28,6 @@ mockito = [
 ]
 
 [plugins]
-jmh-gradle = "me.champeau.jmh:0.7.0"
-version-catalog-update = "nl.littlerobots.version-catalog-update:0.7.0"
+jmh-gradle = "me.champeau.jmh:0.7.1"
+version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.0"
 versions = "com.github.ben-manes.versions:0.46.0"
