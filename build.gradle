@@ -1,11 +1,14 @@
 plugins {
     id 'java'
+    id 'jacoco'
     alias(libs.plugins.versions)
     alias(libs.plugins.version.catalog.update)
     alias(libs.plugins.jmh.gradle)
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
+
+jacocoTestReport.dependsOn(test)
 
 repositories {
     mavenCentral()
