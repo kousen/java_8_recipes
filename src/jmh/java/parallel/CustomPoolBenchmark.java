@@ -38,7 +38,7 @@ public class CustomPoolBenchmark {
 
     @Benchmark
     public long addNumsCustomFJPool() {
-        long total = 0;
+        long total;
         ForkJoinPool pool = new ForkJoinPool(16);
         ForkJoinTask<Long> task = pool.submit(() -> LongStream.rangeClosed(1, SIZE)
                 .parallel()
@@ -47,7 +47,7 @@ public class CustomPoolBenchmark {
         try {
             total = task.get();
         } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
             pool.shutdown();
         }
