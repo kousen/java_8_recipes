@@ -11,7 +11,7 @@ jmh-core = { module = "org.openjdk.jmh:jmh-core", version.ref = "jmh" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito" }
-mockito-junit = "org.mockito:mockito-junit-jupiter:5.8.0"
+mockito-junit = "org.mockito:mockito-junit-jupiter:5.9.0"
 
 [bundles]
 jmh = [
