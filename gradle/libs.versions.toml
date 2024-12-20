@@ -1,5 +1,5 @@
 [versions]
-assertj = "3.26.3"
+assertj = "3.27.0"
 jmh = "1.37"
 junit = "5.11.4"
 mockito = "5.2.0"
