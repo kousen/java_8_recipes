@@ -1,14 +1,14 @@
 package concurrency;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AwaitQuiesenceTest {
     private final AwaitQuiesence aq = new AwaitQuiesence();
@@ -31,7 +31,7 @@ public class AwaitQuiesenceTest {
         assertTrue(cf.isDone());
     }
 
-    @Test @Ignore("Causing issues with Github Action")
+    @Test @Disabled("Causing issues with Github Action")
     public void awaitQuiesence() {
         CompletableFuture<Void> cf = aq.supplyThenAccept();
         assertFalse(cf.isDone());

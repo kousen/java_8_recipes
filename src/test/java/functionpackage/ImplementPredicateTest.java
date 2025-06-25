@@ -1,19 +1,19 @@
 package functionpackage;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;
 
 import static functionpackage.ImplementPredicate.LENGTH_FIVE;
 import static functionpackage.ImplementPredicate.STARTS_WITH_S;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ImplementPredicateTest {
     private final ImplementPredicate demo = new ImplementPredicate();
     private String[] names;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         names = Stream.of("Mal", "Wash", "Kaylee", "Inara", "Zoë",
                 "Jayne", "Simon", "River", "Shepherd Book")

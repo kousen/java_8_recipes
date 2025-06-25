@@ -1,18 +1,18 @@
 package sorting;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SortingMapsTest {
     private final SortingMaps<String, Integer> sm = new SortingMaps<>();
     private final Map<String, Integer> map = new HashMap<>();
 
-    @Before
+    @BeforeEach
     public void setUp() {
         map.put("a", 1);
         map.put("b", 2);

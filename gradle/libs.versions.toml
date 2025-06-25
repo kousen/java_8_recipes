@@ -8,8 +8,8 @@ mockito = "5.2.0"
 assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
 jmh-ann-proc = { module = "org.openjdk.jmh:jmh-generator-annprocess", version.ref = "jmh" }
 jmh-core = { module = "org.openjdk.jmh:jmh-core", version.ref = "jmh" }
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
-junit-vintage = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter" }
+junit-vintage = { module = "org.junit.vintage:junit-vintage-engine" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito" }
 mockito-junit = "org.mockito:mockito-junit-jupiter:5.18.0"
 
@@ -20,7 +20,6 @@ jmh = [
 ]
 junit = [
     "junit-jupiter",
-    "junit-vintage",
 ]
 mockito = [
     "mockito-inline",

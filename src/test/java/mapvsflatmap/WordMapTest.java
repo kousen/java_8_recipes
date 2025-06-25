@@ -1,19 +1,19 @@
 package mapvsflatmap;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WordMapTest {
     private final WordMap wordMap = new WordMap();
     private final Map<String, Long> sample = new HashMap<>();
 
-    @Before
+    @BeforeEach
     public void setUp() {
         wordMap.setFileName("simple_file.txt");
         sample.put("some", 2L);

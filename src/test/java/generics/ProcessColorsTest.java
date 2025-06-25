@@ -1,17 +1,17 @@
 package generics;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProcessColorsTest {
     private final ProcessColors processColors = new ProcessColors();
     private final Color color = new Color(100, 50, 0);
 
-    @Before
+    @BeforeEach
     public void setUp() {
         processColors.setColor(color);
     }

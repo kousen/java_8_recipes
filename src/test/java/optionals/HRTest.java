@@ -1,14 +1,14 @@
 package optionals;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class HRTest {
     private final HR hr = HR.getInstance();
@@ -19,12 +19,12 @@ public class HRTest {
             new Employee("Jayne Cobb"),
             new Employee("Kaylee Frye"));
 
-    @Before
+    @BeforeEach
     public void setUp() {
         hr.hire(sampleEmployees);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         hr.reset();
     }
@@ -35,9 +35,9 @@ public class HRTest {
         assertTrue(hr.findEmployeeById(id).isPresent());
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void hireNull() {
-        hr.hire((Employee) null);
+        assertThrows(NullPointerException.class, () -> hr.hire((Employee) null));
     }
 
     @Test

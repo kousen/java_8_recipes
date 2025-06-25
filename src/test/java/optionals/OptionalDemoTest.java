@@ -1,20 +1,20 @@
 package optionals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OptionalDemoTest {
     private final Logger logger = Logger.getLogger(OptionalDemoTest.class.getName());
     private final OptionalDemo demo = new OptionalDemo();
 
-    @Before
+    @BeforeEach
     public void setUp() {
         demo.setStrings(Arrays.asList("five", "even", "length", "string", "values"));
     }
@@ -57,11 +57,11 @@ public class OptionalDemoTest {
         assertEquals("five", first.orElse("No even length strings"));
     }
 
-    @Test(expected = NoSuchElementException.class)
+    @Test
     public void findFirstOdd_throwsException() {
         Optional<String> first = demo.findFirst(s -> s.length() % 2 != 0);
         assertFalse(first.isPresent());
-        first.get();
+        assertThrows(NoSuchElementException.class, () -> first.get());
     }
 
     @Test

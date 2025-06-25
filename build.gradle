@@ -6,7 +6,11 @@ plugins {
     alias(libs.plugins.jmh.gradle)
 }
 
-sourceCompatibility = JavaVersion.VERSION_11
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 jacocoTestReport.dependsOn(test)
 
@@ -20,8 +24,14 @@ test {
 }
 
 dependencies {
+    // JUnit BOM for consistent versions
+    testImplementation platform("org.junit:junit-bom:${libs.versions.junit.get()}")
+    
     // JUnit bundle (includes vintage engine)
     testImplementation libs.bundles.junit
+    
+    // Add explicit JUnit Platform Launcher to fix version mismatch
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // Mockito bundle (inline and JUnit Jupiter engine)
     testImplementation libs.bundles.mockito

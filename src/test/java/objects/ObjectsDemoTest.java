@@ -1,6 +1,6 @@
 package objects;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ObjectsDemoTest {
     private final ObjectsDemo demo = new ObjectsDemo();

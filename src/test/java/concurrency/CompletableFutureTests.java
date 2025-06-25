@@ -1,8 +1,9 @@
 package concurrency;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -12,16 +13,16 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class CompletableFutureTests {
 
-    @Test(expected = CancellationException.class)
+    @Test
     public void joinAfterCancel() {
         CompletableFuture<String> future = new CompletableFuture<>();
         future.cancel(false);
-        System.out.println(future.join());
+        assertThrows(CancellationException.class, () -> future.join());
     }
 
     @Test
@@ -44,9 +45,9 @@ public class CompletableFutureTests {
         assertEquals("I'm done", future.join());
     }
 
-    @Test(expected = ExecutionException.class)
-    public void completeExceptionally() throws Exception {
-        parseNumber("abc").get();
+    @Test
+    public void completeExceptionally() {
+        assertThrows(ExecutionException.class, () -> parseNumber("abc").get());
     }
 
     @Test
@@ -75,7 +76,7 @@ public class CompletableFutureTests {
         return future;
     }
 
-    @Test @Ignore("problems with CI server")
+    @Test @Disabled("problems with CI server")
     public void supplyThenAccept() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));
@@ -92,7 +93,7 @@ public class CompletableFutureTests {
         assertTrue(result.contains("Running..."));
     }
 
-    @Test @Ignore("problems with CI server")
+    @Test @Disabled("problems with CI server")
     public void supplyThenAcceptAsyncWithExecutor() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(baos));

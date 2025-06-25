@@ -1,13 +1,44 @@
-build
-bin
-classes
-.idea
-.gradle
+# Gradle
+build/
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# Java
+bin/
+classes/
+out/
+*.class
+
+# IDE
+.idea/
+.vscode/
 .project
 .classpath
-.settings
-out
+.settings/
 *.iml
 *.ipr
 *.iws
+
+# JMH (Benchmarking)
+jmh-result.json
+
+# JVM
+hs_err_pid*
+replay_pid*
+
+# OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test reports (backup - build/ should catch these)
+test-results/
+jacoco/
+
+# Gradle build scan cache
+.gradle/build-scan-data/

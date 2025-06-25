@@ -1,11 +1,12 @@
 package concurrency;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutionException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CompletableFutureDemosTest {
     private final CompletableFutureDemos demo = new CompletableFutureDemos();
@@ -23,9 +24,15 @@ public class CompletableFutureDemosTest {
         assertEquals(1, product.getId());
     }
 
-    @Test(expected = ExecutionException.class)
-    public void testException() throws Exception {
-        demo.getProduct(666).get();
+    @Test
+    public void testException() {
+        assertThrows(ExecutionException.class, () -> {
+            try {
+                demo.getProduct(666).get();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     @Test

@@ -1,13 +1,14 @@
 package datetime;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AddingAndSubtractingTest {
     @Test
@@ -123,10 +124,10 @@ public class AddingAndSubtractingTest {
         assertEquals("2020-02-02T11:30:00", end.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
     }
 
-    @Test(expected = DateTimeException.class)
+    @Test
     public void withInvalidDate() {
         LocalDateTime start = LocalDateTime.of(2017, Month.FEBRUARY, 2, 11, 30);
-        start.withDayOfMonth(29);
+        assertThrows(DateTimeException.class, () -> start.withDayOfMonth(29));
     }
 
     @Test
