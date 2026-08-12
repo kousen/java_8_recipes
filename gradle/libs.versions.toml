@@ -29,4 +29,4 @@ mockito = [
 [plugins]
 jmh-gradle = "me.champeau.jmh:0.7.3"
 version-catalog-update = "nl.littlerobots.version-catalog-update:1.1.1"
-versions = "com.github.ben-manes.versions:0.60.0"
+versions = "com.github.ben-manes.versions:0.61.0"
