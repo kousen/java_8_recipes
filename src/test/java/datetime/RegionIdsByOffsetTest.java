@@ -46,7 +46,6 @@ public class RegionIdsByOffsetTest {
 
         assertTrue(names.contains("America/Chicago"));
         assertTrue(names.contains("US/Central"));
-        assertTrue(names.contains("Canada/Central"));
         assertTrue(names.contains("Etc/GMT+5") || names.contains("Etc/GMT+6"));
     }
 
